@@ -1,8 +1,8 @@
 const { ApolloServer, PubSub } = require('apollo-server')
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 
 const resolvers = require('./graphql/resolvers')
-const { MONGODB } = require('./config.js')
 const typeDefs = require('./graphql/typeDefs')
 
 const pubsub = new PubSub()
@@ -12,9 +12,9 @@ const server = new ApolloServer({
   resolvers,
   context: ({ req }) => ({ req, pubsub }),
 })
-
+dotenv.config()
 mongoose
-  .connect(MONGODB, { useNewUrlParser: true })
+  .connect(process.env.MONGODB, { useNewUrlParser: true })
   .then(() => {
     console.log('MongoDB connected')
     return server.listen({ port: 5000 })
