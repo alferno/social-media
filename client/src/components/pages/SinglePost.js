@@ -8,6 +8,7 @@ import LikeButton from '../LikeButton'
 import DeleteButton from '../DeleteButton'
 
 import PopUp from '../../utils/PopUp'
+import { Link } from 'react-router-dom'
 
 const SinglePost = (props) => {
   const postId = props.match.params.postId
