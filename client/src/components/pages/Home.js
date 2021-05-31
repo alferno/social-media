@@ -12,9 +12,12 @@ const Home = () => {
     useQuery(FETCH_POSTS_QUERY)
 
   const { user } = useContext(AuthContext)
+  const columns =
+    window.innerWidth < 580 ? (window.innerWidth > 380 ? 2 : 1) : 3
 
+  console.log(window.innerWidth, columns)
   return (
-    <Grid columns={3}>
+    <Grid columns={columns}>
       <Grid.Row className='page-title'>
         <h1>Recent Posts</h1>
       </Grid.Row>
