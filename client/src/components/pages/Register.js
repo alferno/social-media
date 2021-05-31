@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { useMutation } from '@apollo/client'
 import { Button, Form } from 'semantic-ui-react'
 
+import Head from '../Head'
 import { useForm } from '../../utils/Hooks'
 import { AuthContext } from '../../context/Auth'
 
@@ -34,6 +35,7 @@ const Register = (props) => {
 
   return (
     <div className='form-container'>
+      <Head title='Register' user='' />
       <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
         <h1>Register</h1>
         <Form.Input
