@@ -10,7 +10,7 @@ import { FETCH_POSTS_QUERY } from '../../utils/graphql'
 import Head from '../Head'
 
 const Home = () => {
-  const [windowSize, setWindowSize] = useState()
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
   const { loading, data: { getPosts: posts } = {} } =
     useQuery(FETCH_POSTS_QUERY)
 
