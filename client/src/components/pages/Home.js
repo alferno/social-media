@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <>
       <Head title='Home' user={user} />
-      <Grid columns={windowSize < 580 ? (windowSize > 380 ? 2 : 1) : 3}>
+      <Grid columns={windowSize < 580 ? (windowSize > 400 ? 2 : 1) : 3}>
         <Grid.Row className='page-title'>
           <h1>Recent Posts</h1>
         </Grid.Row>
